@@ -36,3 +36,12 @@ console.log(typeof isloggedIn)
 console.log(isloggedIn)
 console.log(typeof booleanConversionVariable)
 console .log(booleanConversionVariable)*/
+
+//             ********************operations **************************
+
+// let str = "Pragyesh"
+//  let str2 =" Chauhan"
+//  console.log(str +str2)
+
+console.table(["1"+ 2 ,1+"2"])
+
