@@ -41,7 +41,15 @@ console .log(booleanConversionVariable)*/
 
 // let str = "Pragyesh"
 //  let str2 =" Chauhan"
-//  console.log(str +str2)
+//  console.log(str +str2) // Pragyesh Chauhan
 
-console.table(["1"+ 2 ,1+"2"])
+console.table(["1"+ 2 ,1+"2"]) // both case 12 
+console.log("1"+2+2); // 122
+// But 
+console.log(1+3+"2") // 42
+//this all because of predefined rules of java-script
+
+
+
+
 
