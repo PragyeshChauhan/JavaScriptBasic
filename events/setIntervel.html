@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hi Buddy</h1>
+    <button class="Start">Start</button>
+    <!-- <button class="close">Stop</button> -->
+</body>
+<script>
+
+  let StarIntervalt =  document.querySelector('.Start');
+//   let closeInterval =  document.querySelector('.close');
+  let h1 =  document.querySelector('h1');
+  let setinterval;
+  StarIntervalt.addEventListener('mouseover' ,function () {
+    function handeler(str) {
+     let date = new Date()
+     h1.innerText=` ${date.toLocaleDateString()} at time ${date.toLocaleTimeString()}`;
+    //  console.log(`hey  ${str} now time is ${date.toLocaleTimeString()} `);
+    StarIntervalt.innerText='Remove Mouse To Stop '
+ }
+ setinterval= setInterval(handeler ,1000,'Pragyesh')
+},false) 
+ // has three parameter 'Pragyesh' is to pass in function handeler parameter 
+ StarIntervalt.addEventListener('mouseout' ,function () {
+    console.log("inside closeInterval");
+    clearInterval(setinterval);
+    StarIntervalt.innerText='Start'
+},false) // bubbling phase or propogation 
+</script>
+</html>

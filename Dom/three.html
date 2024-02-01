@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>apna adda part 3 </title>
+</head>
+<body style="border: 15px; background-color: black; color: steelblue;border-radius: 50px;">
+    <ul class="unorderlist" id="parent">
+        <li class="list" id="language">javaScript</li>
+        <li class="list" id="language">java</li>
+        <li class="list" id="language">React</li>
+    </ul>
+<script>
+    function languageAdd(langName) {
+        const li =document.createElement('li');
+        li.innerHTML=langName;
+        const unorderlist= document.querySelector('#parent');
+        unorderlist.appendChild(li); 
+    }
+    languageAdd('html')
+
+
+    // same thing optimize way
+
+    function optiWayToAddLang(langName) {
+        // always use appendchile not use innerhtml
+        const li =document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.getElementById('parent').appendChild(li);
+    }
+    optiWayToAddLang('Rust')
+
+    //Editing
+    const secondlang=document.querySelector('li:nth-child(2)')
+
+   const li= document.createElement('li')
+    li.appendChild(document.createTextNode('golang'))
+//    li.textContent="mojo"
+    secondlang.replaceWith(li)
+//editing by other way
+
+const firstlang =document.querySelector('li:nth-child(1)')
+
+firstlang.outerHTML= "<li>Angular</li>";
+
+//remove 
+
+const fulllist =document.querySelector('#parent')
+const lastlang= fulllist.lastElementChild;
+lastlang.remove()
+
+//
+
+const lastlang2 =document.querySelector('li:last-child')
+console.log(lastlang2);
+lastlang2.remove()
+
+
+</script>
+</body>
+</html>

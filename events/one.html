@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .images{
+
+            width: 500px;
+            height: 500px;
+            text-align: center;
+            background-color: rgb(63, 5, 5);
+            margin-left: 200px;
+            margin-top: 100px;
+            border: 2px solid black;
+            border-radius: 30%;
+        }
+        .image{
+            width: 100px;
+            height: 25px;
+            text-align: center;
+            background-color: rgb(103, 98, 107);
+            border: 2px solid black;
+            padding-top: 10px;
+            margin-left:130px;
+            margin-top: 50px;
+            font-size: 12px;
+            border-radius: 20px;
+        
+        }
+        body{
+            background-color: rgb(3, 1, 1);
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="images">
+        <ul>
+            <li class="image" id="list1">click here for list1</li>
+            <li class="image" id="list2">click here for list2</li>
+            <li class="image" id="list3">click here for list3</li>
+            <li class="image" id="list4">click here for list4</li>
+            <li class="image" id="list5">
+             <a href="http://www.google.com">Google</a>
+            </li>
+        </ul>
+    </div>
+    
+</body>
+<script>
+/**
+ * As java script is interpreted language 
+ * 
+*/
+// function eventHandeller(event){
+//     // event.stopPropagation();
+//     event.preventDefault(); /// avoid the default action of anchor tag in list5
+//     console.log(event.target);
+    
+// }
+// document.querySelector('.images').addEventListener('click', eventHandeller ,false);
+
+document.querySelector('.images').addEventListener('click', function(event){
+    console.log(event.target);
+
+    // let removeitem =event.target.parentNode // remove the parentNode
+
+    if(event.target.tagName ==='LI'){
+        let removeitem =event.target
+        removeitem.remove();
+    // removeitem.parentNode.removeChild(removeitem) both work same 
+    }
+    // removeitem.parentNode.removeChild(removeitem) both work same 
+} ,false);
+</script>
+</html>

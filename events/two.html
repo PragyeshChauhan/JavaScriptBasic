@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>apna Adda</title>
+</head>
+<body>
+    <h1>Hi Buddy</h1>
+    <button class="close">Stop</button>
+    <button class="clearTimeOut">clearTimeOut</button>
+</body>
+<script>
+    let h1 =  document.querySelector('h1');
+    let button =document.querySelector('.close')
+    let clearTimeOut =document.querySelector('.clearTimeOut');
+    let setTimeOut; 
+    stopAgain();   
+    function stopAgain() {   
+    button.addEventListener('click' ,function handel(event) {
+        h1.innerText= "Game stop is going to stop in a min ";
+        setTimeOut=  setTimeout(function (){
+            button.innerText ='start';
+            h1.innerText= "Game stop";
+        },10000);
+        button.removeEventListener('click',handel)
+        startAgain();
+    },false)
+    clearTimeOut.addEventListener('click', function(event){
+             event.preventDefault();
+            clearTimeout(setTimeOut);
+            console.log(`clear ${setTimeOut} `)
+
+     })
+   }
+   function startAgain() {
+    button.addEventListener('click' ,function handel2(event) {
+        h1.innerText= "Game is going to start Again";
+        setTimeOut = setTimeout(function(){
+            h1.innerText= "Game Started";
+         },10000);
+        // document.querySelector('h1').innerText="why you clicked start";
+        button.innerText ='stop';
+        // if(Boolean(isexecute)){
+        //    location.reload()
+        // }
+        button.removeEventListener('click',handel2)
+
+        stopAgain();  
+    },false)  
+    clearTimeOut.addEventListener('click', function(event){
+             event.preventDefault();
+            clearTimeout(setTimeOut);
+            console.log(`clear ${setTimeOut} `)
+
+     })
+}
+
+</script>
+</html>

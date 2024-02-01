@@ -1,0 +1,97 @@
+ <!DOCTYPE html>  <!-- it tell that html is html5 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM learning </title>
+    <style>
+        .bg-black{
+            background-color: brown;
+            border-radius: 15px;
+        }
+        body{
+            background-color: black;
+        }  
+    </style>
+</head>
+<body >
+    <div class="bg-black">
+        <h1 id="tittle" class ="H1">Dom learning on chai or code <span style="display: none;">this is for testing</span></h1>
+        <h2 id= "first" class ="H2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+        <h1 id= "second" class ="H1"> Lorem ipsum dolor sit</h1>
+        <p>ram ram bhai ko</p>
+        Name <input type="text"> </input>
+    </div>
+
+    <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ul>
+    <!-- ul>li#list${list$}.class$*4 -->
+    <ul class = "parent">
+        <li id="list1" class="day" style="background-color: yellow;">Monday</li>
+        <li id="list2" class="day">Tuesday</li>
+        <li id="list3" class="day">wednesday</li>
+        <li id="list4" class="day">Thursday</li>
+    </ul>
+    
+</body>
+
+<script>
+    // const element =document.getElementsByClassName('day')
+    // console.log(element.length);
+    // const myArray =Array.from(element);
+    // // console.log(myArray);
+    // myArray.forEach((item)=>{
+    //      item.style.backgroundColor ='green'
+    //      item.style.color="Red"
+    // })
+
+    //  const parent = document.getElementsByClassName('parent');
+    //  for (let index = 0; index < parent.length; index++) {
+    //      parent[index].style.color='yellow';    
+    //  } 
+    
+    // const items =document.querySelectorAll('li')
+    // items.forEach((l)=>{
+    //        l.style.color='white'
+    //        l.style.padding='15px'
+    //        l.style.background='brown'
+    // })
+    // console.log(items);
+const items2 =document.querySelector('.parent');
+// console.log(items2);
+// console.log(typeof items2);
+items2.firstElementChild.style.color='pink'
+items2.lastElementChild.style.backgroundColor='pink'
+items2.firstElementChild.nextElementSibling.style.backgroundColor='white'
+// console.log(`nodes :: ${items2.childNodes}`);    
+console.log("Nodes :: " ,items2.childNodes);
+</script>
+</html>
+ <!-- dom 
+
+dom stand for document object model : mean your document is made up of which model 
+console.dir(window.document)
+console.dir(document)  
+both use to acess the full detail of document in browser console also can
+use  console.log(document) but it is not give full detail
+text inside tag can also say text nodes
+class ,id and other are knowns as attribute 
+html collection and array is not same both are different  but can canvertible
+
+there are many sector in DOM - we can select the tag using the method inside Document one of 
+them is document.getElementId(id) also can replace 
+document.getElementId(id).innerHTML="<h1>Pragyesh</h1>" 
+
+In HTML class is written as class but java script understand it 
+as className
+
+ textContext give all content which display on screen or not but 
+ innerText only show text which are visible on screen 
+ innerHTML give the hold text with HTML text 
+ 'Dom learning on chai or code <span style="display: none;">this is for testing</span>'
+
+
+ document.querySelector("H1") // tag we pass will return that type of first tag in HTML file jo bhi
+ pahla mil gaya usko utha layega

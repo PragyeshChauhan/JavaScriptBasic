@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Capturing Example</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="outer" style="border: 1px solid black; padding: 20px;">
+  <div id="inner" class="box">Inner Box (Click me!)</div>
+</div>
+
+<script>
+  // Define a function to handle the click event
+  function handleClick(event) {
+    console.log('Box clicked:', event.target.id);
+  }
+
+  // Get references to the outer and inner boxes
+  const outerBox = document.getElementById('outer');
+  const innerBox = document.getElementById('inner');
+
+  // Add click event listener to inner box with capturing phase (true)
+  innerBox.addEventListener('click', handleClick, true);
+
+  // Add click event listener to outer box with capturing phase (true)
+  outerBox.addEventListener('click', handleClick, false);
+</script>
+
+</body>
+</html>
